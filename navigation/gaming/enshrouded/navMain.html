@@ -14,6 +14,13 @@
     <!-------->
 
     <style>
+    	:root {
+  			--CEbg: #263d30; /* Dark green for Core essentials background */
+    		--CEfg: #50946e;  /* Lighter green for Core Essentials foreground */
+            /*Font attribute variables*/
+            --
+		}
+        
         * {
             margin: 0;
             padding: 0;
@@ -23,6 +30,7 @@
 
 
         .navMenu {
+        /*display: inline-grid;*/
             margin: 7px auto;
             padding: 5px;
             font-family: "Cormorant Unicase", sans-serif;
@@ -34,7 +42,7 @@
         }
 
         .navMenu a {
-            color: #263d30;
+            color: var(--CEfg);
             text-decoration: none;
             text-transform: uppercase;
             display: inline-block;
@@ -42,54 +50,54 @@
         }
 
         .background {
-            background-color: #191919;
-            opacity: 0.0;
+            background-color: var(--CEbg);
+            opacity: 1.0;
         }
 
         .border {
             border: 3px solid #263d30;
-
         }
 
         .navMenu a:hover {
 
-            color: #50946e;
+            color: var(--CEfg);
         }
-
-        @property --myColor{
-          syntax: "<color>";
-          inherits: false;
-          initial-value: lightblue;
+		
+        .button{
+            margin: 7px auto;
+            padding: 5px;
+            font-family: "Cormorant Unicase", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            text-align: center;
         }
+        .CEbutton {
+        	margin: 7px auto;
+            padding: 5px;
 
-        .cormorant-unicase-light {
-          font-family: "Cormorant Unicase", serif;
-          font-weight: 300;
-          font-style: normal;
         }
-
-        .cormorant-unicase-regular {
-          font-family: "Cormorant Unicase", serif;
-          font-weight: 400;
-          font-style: normal;
+        
+        .CEbkg{
+            background-color: var(--CEbg);
         }
-
-        .cormorant-unicase-medium {
-          font-family: "Cormorant Unicase", serif;
-          font-weight: 500;
-          font-style: normal;
+        
+        .CEfont{
+			color: var(--CEfg);
+            font-family: "Cormorant Unicase", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+            text-align: center;
         }
-
-        .cormorant-unicase-semibold {
-          font-family: "Cormorant Unicase", serif;
-          font-weight: 600;
-          font-style: normal;
+        
+        .CEborder{
+            border-radius: 10px;
+            border-color: var(--CEbg);
         }
-
-        .cormorant-unicase-bold {
-          font-family: "Cormorant Unicase", serif;
-          font-weight: 700;
-          font-style: normal;
+        
+		.nobkg{
+        opacity: 0.0;
         }
 
     </style>
@@ -97,13 +105,14 @@
 
 <body>
 
-    <nav class="navMenu  border">
-        <a id="mainHome" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> Enshrouded Home</a>
-        <a id="keybindings" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-keyboard"></i> Keybindings</a>
-        <a id="blockdetails" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-cubes"></i> Block Details</a>
-        <a id="forginggems" onclick="navigate(this.id)" href="#"> <i class="fa-regular fa-gem"></i> Forging Gems</a>
-        <a id="forginggemsdb" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-database"></i> Forging Gems DB</a>
-        <a id="farming_home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-tractor"></i> Farming Home</a>
+    <nav class="navMenu border">
+    	<button class="CEbutton CEfont CEborder" type="button" onclick="navigate(this.id)"> <a id="mainHome" onclick="navigate(this.id)"> <i class="fa-solid fa-house"></i> Enshrouded Home</a></button>
+        <a id="mainHome" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> Enshrouded Home</a>
+        <a id="keybindings" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-keyboard"></i> Keybindings</a>
+        <a id="blockdetails" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-cubes"></i> Block Details</a>
+        <a id="forginggems" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-regular fa-gem"></i> Forging Gems</a>
+        <a id="forginggemsdb" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-database"></i> Forging Gems DB</a>
+        <button class="CEbutton" type="button"> <a id="farming_home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-tractor"></i> Farming Home</a> </button>
         <a id="farmcropsdb" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-database"></i> Farm Crops DB</a>
         <a id="modhome" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-screwdriver-wrench"></i> Modding Home</a>
 
@@ -121,7 +130,7 @@
         function navigate(id) {
 
             if (id == 'mainHome')
-                window.open("https://example.com", '_blank').focus();
+                window.open("https://www.notion.so/Enshrouded-Portal-2c9e8098267e80d3a001e9d26ab55ccd?source=copy_link", '_blank').focus();
             else if (id == "keybindings")
                 window.open("https://example.com", '_blank').focus();
             else if (id == "blockdetails")
