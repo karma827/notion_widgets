@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&family=Poiret+One&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+
+    <!-------->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+
+        .navMenu {
+            margin: 7px auto;
+            padding: 5px;
+            font-family: "Cormorant Unicase", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            text-align: center;
+            width: fit-content;
+        }
+
+        .navMenu a {
+            color: #263d30;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 6px;
+        }
+
+        .background {
+            background-color: #191919;
+            opacity: 0.0;
+        }
+
+        .border {
+            border: 3px solid #263d30;
+
+        }
+
+        .navMenu a:hover {
+
+            color: #50946e;
+        }
+
+        @property --myColor{
+          syntax: "<color>";
+          inherits: false;
+          initial-value: lightblue;
+        }
+
+        .cormorant-unicase-light {
+          font-family: "Cormorant Unicase", serif;
+          font-weight: 300;
+          font-style: normal;
+        }
+
+        .cormorant-unicase-regular {
+          font-family: "Cormorant Unicase", serif;
+          font-weight: 400;
+          font-style: normal;
+        }
+
+        .cormorant-unicase-medium {
+          font-family: "Cormorant Unicase", serif;
+          font-weight: 500;
+          font-style: normal;
+        }
+
+        .cormorant-unicase-semibold {
+          font-family: "Cormorant Unicase", serif;
+          font-weight: 600;
+          font-style: normal;
+        }
+
+        .cormorant-unicase-bold {
+          font-family: "Cormorant Unicase", serif;
+          font-weight: 700;
+          font-style: normal;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navMenu  border">
+        <a id="mainHome" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> Enshrouded Home</a>
+        <a id="keybindings" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-keyboard"></i> Keybindings</a>
+        <a id="blockdetails" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-cubes"></i> Block Details</a>
+        <a id="forginggems" onclick="navigate(this.id)" href="#"> <i class="fa-regular fa-gem"></i> Forging Gems</a>
+        <a id="forginggemsdb" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-database"></i> Forging Gems DB</a>
+        <a id="farming_home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-tractor"></i> Farming Home</a>
+        <a id="farmcropsdb" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-database"></i> Farm Crops DB</a>
+        <a id="modhome" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-screwdriver-wrench"></i> Modding Home</a>
+
+    </nav>
+
+
+    <script>
+
+        let direction = "horizontal";
+        if (direction === "vertical") {
+            document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} i{width:15px; margin-right:5px} .navMenu{margin:3px}</style>`)
+        }
+
+
+        function navigate(id) {
+
+            if (id == 'mainHome')
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "keybindings")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "blockdetails")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "month")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "forginggems")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "forginggemsdb")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "farming_home")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "farmcropsdb")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "modhome")
+                window.open("https://example.com", '_blank').focus();
+        }
+    </script>
+
+
+</body>
+
+</html>
