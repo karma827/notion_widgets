@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&family=Poiret+One&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+
+    <!-------->
+
+    <style>
+    	:root {
+  			--CEbg: #263d30; /* Dark green for Core Essentials background */
+    		--CEfg: #50946e;  /* Lighter green for Core Essentials foreground */
+            --CEred: #a40000; /* Red */
+            /*Font attribute variables*/
+            --CEfsz: 20px; /* Core Essentials font size */
+		}
+        
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+
+        .navMenu {
+        /*display: inline-grid;*/
+            margin: 7px auto;
+            padding: 5px;
+            font-family: "Cormorant Unicase", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: var(--CEfsz);
+            text-align: center;
+            width: fit-content;
+        }
+
+        .navMenu a {
+            color: var(--CEfg);
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 6px;
+        }
+
+        .background {
+            background-color: var(--CEbg);
+            opacity: 1.0;
+        }
+
+        .border {
+            border: 3px solid #263d30;
+        }
+
+        .navMenu a:hover {
+            color: var(--CEfg);
+        }
+		
+        .button{
+            margin: 7px auto;
+            padding: 5px;
+            font-family: "Cormorant Unicase", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: var(--CEfsz);
+            text-align: center;
+        }
+        .CEbutton {
+        	margin: 7px auto;
+            padding: 5px;
+
+        }
+        
+        .CEbkg{
+            background-color: var(--CEbg);
+        }
+        
+        .CEfont{
+			color: var(--CEfg);
+            font-family: "Cormorant Unicase", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: var(--CEfsz);
+            text-align: center;
+        }
+        
+        .CEborder{
+            border: 2px solid var(--CEbg);
+            border-radius: 10px;
+        }
+        
+		.nobkg{
+        opacity: 0.0;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navMenu border">
+    	<button class="CEbutton CEfont CEborder" type="button" onclick="navigate(this.id)"> <a id="mainHome" onclick="navigate(this.id)"> <i class="fa-solid fa-house"></i> Enshrouded Home</a></button>
+        <a id="mainHome" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> Enshrouded Home</a>
+        <a id="keybindings" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-keyboard"></i> Keybindings</a>
+        <a id="blockdetails" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-cubes"></i> Block Details</a>
+        <a id="forginggems" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-regular fa-gem"></i> Forging Gems</a>
+        <a id="forginggemsdb" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-database"></i> Forging Gems DB</a>
+        <button class="CEbutton" type="button"> <a id="farming_home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-tractor"></i> Farming Home</a> </button>
+        <a id="farmcropsdb" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-database"></i> Farm Crops DB</a>
+        <a id="modhome" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-screwdriver-wrench"></i> Modding Home</a>
+
+    </nav>
+
+
+    <script>
+
+        let direction = "vertical";
+        if (direction === "vertical") {
+            document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} i{width:15px; margin-right:5px} .navMenu{margin:3px}</style>`)
+        }
+
+
+        function navigate(id) {
+
+            if (id == 'mainHome')
+                window.open("https://www.notion.so/Enshrouded-Portal-2c9e8098267e80d3a001e9d26ab55ccd?source=copy_link", '_blank').focus();
+            else if (id == "keybindings")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "blockdetails")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "month")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "forginggems")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "forginggemsdb")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "farming_home")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "farmcropsdb")
+                window.open("https://example.com", '_blank').focus();
+            else if (id == "modhome")
+                window.open("https://example.com", '_blank').focus();
+        }
+    </script>
+
+
+</body>
+
+</html>
