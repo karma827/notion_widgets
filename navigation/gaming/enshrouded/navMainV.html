@@ -14,40 +14,70 @@
     <!-------->
 
     <style>
-    	:root {
-  			--CEbg: #263d30; /* Dark green for Core Essentials background */
-    		--CEfg: #50946e;  /* Lighter green for Core Essentials foreground */
-            --CEred: #a40000; /* Red */
-            /*Font attribute variables*/
-            --CEfsz: 20px; /* Core Essentials font size */
-		}
+        :root {
+        /*   Color variables   */
+        /*   ===============   */
+            /*   Section-specific background colors   */            
+            --NHbg: #996439;    /*   NavHeader background color   */
+            --CEbg: #5f9978;    /*   Core Essentials background color   */            
+            --S2bg:  #816199;   /*   Section 2 background color   */            
+            --S3bg:  #436b99;   /*   Section 3 background color   */
+            --S4bg:  #995476;   /*   Section 4 background color   */
+            --ARbg:  #997864;   /*   Additional Resources background color   */
+            --CAbg:  #99544e;   /*   Custom Admin background color   */
+
+            /*   Section-specific foreground colors   */     
+            --NHfg: #d27b2d;    /*   NavHeader foreground color   */
+            --CEfg: #75d9a1;    /*   Core Essentials foreground color   */
+            --S2fg:  #b981d9;   /*   Section 2 foreground color   */
+            --S3fg:  #3c87d9;   /*   Section 3 foreground color   */
+            --S4fg:  #d9559b;   /*   Section 4 foreground color   */
+            --ARfg:  #d9a17b;   /*   Additional Resources foreground color   */
+            --CAfg:  #d9554b;   /*   Custom Admin foreground color   */
+
+            /*   Notion Colors   */
+            --NotionBGdark: #191919;   /* Notion dark theme background color */
         
+        /*   Font variables   */
+        /*   ==============   */
+            /*   Font attribute variables   */
+            --SectHeadFSZ: 24px;   /* Section header font size */
+            --SectLinkFSZ: 20px;   /* Section contents, button and link font size */
+            --SectLinkHoverGrow: 2px;   /*   Amount of px to increase the size of the hover font by, not the new value   */
+            --SectIconShrink: 5px;  /*   Amount of px to decrease the size of the icon font   */
+
+        /*   Button variables   */
+        /*   ================   */
+            /*   Button attribute variables   */
+            --BborderStyle:  2px solid; /*   Border styling without color   */
+            --BborderRadius: 15px;  /*   Border corner roundedness   */
+            --ButtonMargin: 10px;      /*   Margins are spacing outside borders   */
+            --ButtonPadding: 5px;     /*   Padding is spacing inside borders   */
+
+            --Indent: 10px; /*   Amount of additional padding for indented items   */
+        }
+        
+
         * {
+            background-color: var(--NotionBGdark);
             margin: 0;
             padding: 0;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
 
-
         .navMenu {
-        /*display: inline-grid;*/
-            margin: 7px auto;
-            padding: 5px;
+            background-color: var(--NotionBGdark);
+            position: fixed;
+            top: 0;
+            margin: 5px;
+            padding: 10px;
             font-family: "Cormorant Unicase", sans-serif;
-            font-weight: 400;
+            font-weight: 600;
             font-style: normal;
-            font-size: var(--CEfsz);
+            font-size: var(--SectLinkFSZ);
             text-align: center;
             width: fit-content;
-        }
-
-        .navMenu a {
-            color: var(--CEfg);
-            text-decoration: none;
-            text-transform: uppercase;
-            display: inline-block;
-            padding: 6px;
         }
 
         .background {
@@ -59,62 +89,202 @@
             border: 3px solid #263d30;
         }
 
-        .navMenu a:hover {
-            color: var(--CEfg);
+        .navMenu a {
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
         }
-		
-        .button{
-            margin: 7px auto;
-            padding: 5px;
-            font-family: "Cormorant Unicase", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: var(--CEfsz);
-            text-align: center;
-        }
-        .CEbutton {
-        	margin: 7px auto;
-            padding: 5px;
 
+        .navMenu a:hover {
+        /*    color: var(--CEfg); */
         }
         
-        .CEbkg{
-            background-color: var(--CEbg);
+        i {
+            font-size: 20px;
         }
-        
-        .CEfont{
-			color: var(--CEfg);
+
+        /*.navMenu button {
+            margin: 5px;
+            padding: 5px;
             font-family: "Cormorant Unicase", sans-serif;
-            font-weight: 400;
+            font-weight: 600;
             font-style: normal;
-            font-size: var(--CEfsz);
+            font-size: var(--SectLinkFSZ);
             text-align: center;
+            border-style: none;
+        }*/
+
+        .navHeader {
+            margin: 5px;
+            padding: 0px;
+            font-family: "Cormorant Unicase", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: var(--SectHeadFSZ);
+            text-align: center;
+            border-style: none;
         }
-        
-        .CEborder{
-            border: 2px solid var(--CEbg);
-            border-radius: 10px;
-        }
-        
-		.nobkg{
-        opacity: 0.0;
-        }
+
+/*   Beginning of specific section button styling   */
+    /*   Core Essentials styling   */
+            .CEHeader {
+                font-size: var(--SectHeadFSZ);
+                color: var(--CEbg);
+            }
+            .CEHeader:hover {
+                font-size: calc(var(--SectHeadFSZ) + var(--SectLinkHoverGrow));
+                color: var(--CEfg);
+            }
+            .CEbutton {
+                color: var(--CEbg);
+            }
+            .CEbutton:hover {
+                color: var(--CEfg);
+                font-size: calc(var(--SectLinkFSZ) + var(--SectLinkHoverGrow));
+            }
+            .CEborder {
+                border: var(--BborderStyle) var(--CEfg);
+                border-radius: var(--BborderRadius);
+            }
+            .CEbkg {
+                background-color: var(--CEbg);
+            }
+            
+    /*   Section 2 styling   */
+            .S2Header {
+                font-size: var(--SectHeadFSZ);
+                color: var(--S2bg);
+            }
+            .S2Header:hover {
+                font-size: calc(var(--SectHeadFSZ) + var(--SectLinkHoverGrow));
+                color: var(--S2fg);
+            }
+            .S2button {
+                color: var(--S2bg);
+            /*    border: var(--BborderStyle) var(--S2fg);
+                border-radius: var(--BborderRadius); */
+            }
+            .S2button:hover {
+                color: var(--S2fg);
+                font-size: calc(var(--SectLinkFSZ) + var(--SectLinkHoverGrow));
+            }
+            .S2border {
+                border: var(--BborderStyle) var(--S2fg);
+                border-radius: var(--BborderRadius);
+            }
+            .S2bkg {
+                background-color: var(--S2bg);
+            }
+
+    /*   Section 3 styling   */
+            .S3Header {
+                font-size: var(--SectHeadFSZ);
+                color: var(--S3bg);
+            }
+            .S3Header:hover {
+                font-size: calc(var(--SectHeadFSZ) + var(--SectLinkHoverGrow));
+                color: var(--S3fg);
+            }
+            .S3button {
+                color: var(--S3bg);
+            /*    border: var(--BborderStyle) var(--S3fg);
+                border-radius: var(--BborderRadius); */
+            }
+            .S3button:hover {
+                color: var(--S3fg);
+                font-size: calc(var(--SectLinkFSZ) + var(--SectLinkHoverGrow));
+            }
+            .S3bkg {
+                background-color: var(--S3bg);
+            }
+
+    /*   Section 4 styling   */
+            .S4Header {
+                font-size: var(--SectHeadFSZ);
+                color: var(--S4bg);
+            }
+            .S4Header:hover {
+                font-size: calc(var(--SectHeadFSZ) + var(--SectLinkHoverGrow));
+                color: var(--S4fg);
+            }
+            .S4button {
+                color: var(--S4bg);
+            /*    border: var(--BborderStyle) var(--S4fg);
+                border-radius: var(--BborderRadius);  */
+            }
+            .S4button:hover {
+                color: var(--S4fg);
+                font-size: calc(var(--SectLinkFSZ) + var(--SectLinkHoverGrow));
+            }
+            .S4bkg {
+                background-color: var(--S4bg);
+            }
+
+    /*   Additional Resources (AR) section styling   */
+            .ARHeader {
+                font-size: var(--SectHeadFSZ);
+                color: var(--ARbg);
+            }
+            .ARHeader:hover {
+                font-size: calc(var(--SectHeadFSZ) + var(--SectLinkHoverGrow));
+                color: var(--ARfg);
+            }
+            .ARbutton {
+                color: var(--ARbg);
+            /*    border: var(--BborderStyle) var(--ARfg);
+                border-radius: var(--BborderRadius);  */
+            }
+            .ARbutton:hover {
+                color: var(--ARfg);
+                font-size: calc(var(--SectLinkFSZ) + var(--SectLinkHoverGrow));
+            }
+            .ARbkg {
+                background-color: var(--ARbg);
+            }
+
+    /*   Custom Admin (CA) section styling   */
+            .CAHeader {
+                font-size: var(--SectHeadFSZ);
+                color: var(--CAbg);
+            }
+            .CAHeader:hover {
+                font-size: calc(var(--SectHeadFSZ) + var(--SectLinkHoverGrow));
+                color: var(--CAfg);
+            }
+            .CAbutton {
+                color: var(--CAbg);
+            /*    border: var(--BborderStyle) var(--CAfg);
+                border-radius: var(--BborderRadius);  */
+            }
+            .CAbutton:hover {
+                color: var(--CAfg);
+                font-size: calc(var(--SectLinkFSZ) + var(--SectLinkHoverGrow));
+            }
+            .CAbkg {
+                background-color: var(--CAbg);
+            }
+
+
 
     </style>
 </head>
 
 <body>
 
-    <nav class="navMenu border">
-    	<button class="CEbutton CEfont CEborder" type="button" onclick="navigate(this.id)"> <a id="mainHome" onclick="navigate(this.id)"> <i class="fa-solid fa-house"></i> Enshrouded Home</a></button>
-        <a id="mainHome" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> Enshrouded Home</a>
-        <a id="keybindings" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-keyboard"></i> Keybindings</a>
-        <a id="blockdetails" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-cubes"></i> Block Details</a>
-        <a id="forginggems" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-regular fa-gem"></i> Forging Gems</a>
-        <a id="forginggemsdb" class="CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-database"></i> Forging Gems DB</a>
-        <button class="CEbutton" type="button"> <a id="farming_home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-tractor"></i> Farming Home</a> </button>
-        <a id="farmcropsdb" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-database"></i> Farm Crops DB</a>
-        <a id="modhome" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-screwdriver-wrench"></i> Modding Home</a>
+    <nav class="navMenu">
+        <a id="mainHome" class="navHeader CEHeader" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> Core Essentials</a>
+        <a id="keybindings" class="navLink CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-keyboard"></i> Keybindings</a>
+        <a id="blockdetails" class="navLink CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-cubes"></i> Block Details</a>
+        <a id="gemforging" class="navLink CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-regular fa-gem"></i> Gem Forging</a>
+        <a id="gemforgingdb" class="navLink CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-database"></i> Gem Forging DB</a>
+        <a id="farming_home" class="navLink CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-tractor"></i> Farming Home</a>
+        <a id="farmcropsdb" class="navLink CEbutton" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-database"></i> Farm Crops DB</a>
+        <a id="modhome" class="navHeader S2Header" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> Modding Home</a>
+        <a id="buildcomp" class="navLink S2button" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-screwdriver-wrench"></i> Builder's Companion</a>
+        <a id="S3TestHead" class="navHeader S3Header" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> Section 3 Test Header</a>
+        <a id="S3TestLink" class="navLink S3button" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-microscope"></i> Section 3 Test Link</a>
+        <a id="S4TestHead" class="navHeader S4Header" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> Section 4 Test Header</a>
+        <a id="S4TestLink" class="navLink S4button" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-microscope"></i> Section 4 Test Link</a>
 
     </nav>
 
@@ -123,30 +293,64 @@
 
         let direction = "vertical";
         if (direction === "vertical") {
-            document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} i{width:15px; margin-right:5px} .navMenu{margin:3px}</style>`)
+            document.head.insertAdjacentHTML("beforeend", 
+            `<style>
+            .navMenu a {
+                display: block; 
+                text-align:left; 
+            } 
+            .navHeader {
+                margin-top: 15px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                margin-left: 0px;
+            }
+            .navLink {
+                margin-top: 0px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                margin-left: 30px;
+            }
+            i {
+                font-size:20px; 
+                width:25px; 
+            } 
+            .navMenu {
+                margin: 2px;
+                padding: 0px;
+            }
+            </style>`)
         }
 
 
         function navigate(id) {
 
             if (id == 'mainHome')
-                window.open("https://www.notion.so/Enshrouded-Portal-2c9e8098267e80d3a001e9d26ab55ccd?source=copy_link", '_blank').focus();
+                window.open("https://www.notion.so/Enshrouded-Portal-2f4e8098267e802d91b3d282151f333e?v=2f4e8098267e8022b8af000c3af4b1c7&source=copy_link", '_blank').focus();
             else if (id == "keybindings")
-                window.open("https://example.com", '_blank').focus();
+                window.open("https://www.notion.so/Keybindings-2f4e8098267e80bd9989fd7261fca969?v=2f4e8098267e8022b8af000c3af4b1c7&source=copy_link", '_blank').focus();
             else if (id == "blockdetails")
-                window.open("https://example.com", '_blank').focus();
-            else if (id == "month")
-                window.open("https://example.com", '_blank').focus();
-            else if (id == "forginggems")
-                window.open("https://example.com", '_blank').focus();
-            else if (id == "forginggemsdb")
-                window.open("https://example.com", '_blank').focus();
+                window.open("https://www.notion.so/Block-Locations-and-Info-2f4e8098267e80f8bd84f785b965961f?v=2f4e8098267e8022b8af000c3af4b1c7&source=copy_link", '_blank').focus();
+            else if (id == "gemforging")
+                window.open("https://www.notion.so/Gems-for-Forging-2f4e8098267e80eeb48ee3792bc28ae5?v=2f4e8098267e8022b8af000c3af4b1c7&source=copy_link", '_blank').focus();
+            else if (id == "gemforgingdb")
+                window.open("https://www.notion.so/Keybindings-2f4e8098267e80bd9989fd7261fca969?v=2f4e8098267e8022b8af000c3af4b1c7&source=copy_link", '_blank').focus();
             else if (id == "farming_home")
-                window.open("https://example.com", '_blank').focus();
+                window.open("https://www.notion.so/Farming-and-Animal-Care-2f4e8098267e808fb2cdfe27e63d5021?v=2f4e8098267e8022b8af000c3af4b1c7&source=copy_link", '_blank').focus();
             else if (id == "farmcropsdb")
-                window.open("https://example.com", '_blank').focus();
+                window.open("https://www.notion.so/Farming-Crops-2f4e8098267e8002835cdab0108bd831?v=2f4e8098267e8022b8af000c3af4b1c7&source=copy_link", '_blank').focus();
             else if (id == "modhome")
-                window.open("https://example.com", '_blank').focus();
+                window.open("https://www.notion.so/Modding-and-Mod-Info-2f4e8098267e801d8fa0e659b686eead?v=2f4e8098267e8022b8af000c3af4b1c7&source=copy_link", '_blank').focus();
+            else if (id == "buildcomp")
+                window.open("https://www.notion.so/Mod-Builder-s-Companion-2f4e8098267e8027b0f2ede9235883ae?v=2f4e8098267e8022b8af000c3af4b1c7&source=copy_link", '_blank').focus();
+            else if (id == "S3TestHead")
+                window.open("https://www.notion.so/Section-3-Test-Entry-2f4e8098267e8004ba3fd79a8a450028?v=2f4e8098267e8022b8af000c3af4b1c7&source=copy_link", '_blank').focus();
+            else if (id == "S3TestLink")
+                window.open("https://www.notion.so/Section-3-Test-Entry-2f4e8098267e8004ba3fd79a8a450028?v=2f4e8098267e8022b8af000c3af4b1c7&source=copy_link", '_blank').focus();
+            else if (id == "S4TestHead")
+                window.open("https://www.notion.so/Section-4-Test-Entry-2f4e8098267e80ef9047cb87c2b67083?v=2f4e8098267e8022b8af000c3af4b1c7&source=copy_link", '_blank').focus();
+            else if (id == "S4TestLink")
+                window.open("https://www.notion.so/Section-4-Test-Entry-2f4e8098267e80ef9047cb87c2b67083?v=2f4e8098267e8022b8af000c3af4b1c7&source=copy_link", '_blank').focus();
         }
     </script>
 
